@@ -36,6 +36,7 @@
     box-sizing: border-box;
     position: absolute;
     bottom: 0;
+    cursor:pointer;
 }
 .product-btn:hover{
     background-color: coral;
