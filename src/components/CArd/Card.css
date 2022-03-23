@@ -1,0 +1,14 @@
+.card{
+    position: sticky;
+    top: 0;
+    padding: 30px 20px;
+    margin-left: 10px;
+}
+.card p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.card hr{
+    color: black;
+    border: 1px solid black;
+}
