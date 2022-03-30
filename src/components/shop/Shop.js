@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import useProducts from '../../hooks/useProducts';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Card from '../CArd/Card';
 import Product from '../Product/Product';
 import './Shop.css'
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useProducts();
     const [cart, setCart] = useState([])
-    // for api data load
-    useEffect(() => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data);
-            })
-    }, [])
     // for local storage data load
     useEffect(() => {
         const stroedCart = getStoredCart();
