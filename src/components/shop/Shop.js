@@ -49,7 +49,7 @@ const Shop = () => {
                     </Product>)
                 }
             </div>
-            <div className='order-details'>
+            <div className='cart-details'>
                 <Card cart={cart}></Card>
             </div>
         </div>
