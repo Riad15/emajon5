@@ -8,7 +8,7 @@ const Menubar = () => {
             <img src={logo} alt="" />
             <div>
                 <a href="/shop">Shop</a>
-                <a href="/order">Orders</a>
+                <a href="/orders">Orders</a>
                 <a href="/inventory">Inventory</a>
                 <a href="/home">Home</a>
             </div>
