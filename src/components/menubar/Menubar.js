@@ -7,8 +7,8 @@ const Menubar = () => {
         <nav className='header'>
             <img src={logo} alt="" />
             <div>
-                <a href="/order">Shop</a>
-                <a href="/orders">Order</a>
+                <a href="/shop">Shop</a>
+                <a href="/order">Orders</a>
                 <a href="/inventory">Inventory</a>
                 <a href="/home">Home</a>
             </div>
