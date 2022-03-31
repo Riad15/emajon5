@@ -1,6 +1,6 @@
 # ema-john
 
-online site link: [emajhon](https://emajon-lite.netlify.app/orders).
+online site link: [emajhon](https://emajon-lite.netlify.app/).
 
 ## Available Scripts
 
