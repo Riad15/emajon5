@@ -7,6 +7,10 @@ import RevewItem from '../RevewItem/RevewItem';
 const Orders = () => {
     const [products, setProducts] = useProducts();
     const [cart, setCart] = useCart(products);
+    const handelRemoveProduct = (product) => {
+        const rest = cart.filter(pd => pd.id !== product.id);
+        setCart(rest);
+    }
     return (
         <div className='Shop-container'>
             <div >
@@ -15,6 +19,7 @@ const Orders = () => {
                     cart.map(product => <RevewItem
                         key={product.id}
                         product={product}
+                        handelRemoveProduct={handelRemoveProduct}
 
                     ></RevewItem>)
                 }

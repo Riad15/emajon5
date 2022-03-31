@@ -2,7 +2,8 @@ import React from 'react';
 import './RevewItem.css'
 
 const RevewItem = (props) => {
-    const { price, name, shipping, img, quantity } = props.product;
+    const { handelRemoveProduct, product } = props;
+    const { price, name, shipping, img, quantity } = product;
     return (
         <div className='review-item'>
             <div className='review-img'>
@@ -19,7 +20,7 @@ const RevewItem = (props) => {
 
                 </div>
                 <div className="delete-option">
-                    <button className='btn'>delete</button>
+                    <button onClick={() => handelRemoveProduct(product)} className='btn'>delete</button>
                 </div>
             </div>
         </div>
