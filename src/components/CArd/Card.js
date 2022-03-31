@@ -3,6 +3,7 @@ import './Card.css'
 
 const Card = (props) => {
     const { cart } = props;
+    console.log(props);
     let total = 0;
     let quantity = 0;
     let shipping = 0;
@@ -25,6 +26,7 @@ const Card = (props) => {
             <p>Tax: ${tax} </p>
             <hr />
             <h3>Grand Total: ${grandTotal} </h3>
+            {props.children}
         </div>
     );
 };
