@@ -53,7 +53,9 @@ const Shop = () => {
             <div className='cart-details'>
                 <Card cart={cart}>
                     <Link to='/orders'>
-                        <button>review Order</button>
+                        <div className='review-order-btn'>
+                            <button>review Order</button>
+                        </div>
                     </Link>
                 </Card>
             </div>

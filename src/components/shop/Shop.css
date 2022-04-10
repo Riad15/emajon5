@@ -1,16 +1,36 @@
-.Shop-container{
+.Shop-container {
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-gap: 45px;
-    
+
 }
-.products-container{
+
+.products-container {
     display: grid;
-    grid-template-columns: repeat(3 ,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 45px;
     margin: 100px 20px;
-    
+
 }
-.cart-details{
+
+.cart-details {
     background-color: burlywood;
+}
+
+.review-order-btn {
+    text-align: center;
+}
+
+.review-order-btn button {
+    font-size: 21px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.review-order-btn button:hover {
+    background-color: coral;
 }
