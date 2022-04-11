@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const SignUp = () => {
     // create set state 
@@ -7,6 +9,10 @@ const SignUp = () => {
     const [passWord, setPassWord] = useState();
     const [confirmPassWord, setConfirmPassWord] = useState();
     const [error, setError] = useState();
+    const navigate = useNavigate();
+
+    // useCreateUserWithEmailAndPassword from react firebase hooks
+    const [createUserWithEmailAndPassword, user, loading,] = useCreateUserWithEmailAndPassword(auth);
 
     // write a function to handle email 
     const handleEmailBlur = (event) => {
@@ -22,13 +28,20 @@ const SignUp = () => {
     const handleConfirmPassWord = (event) => {
         setConfirmPassWord(event.target.value);
     }
+    if (loading) {
+        return <p style={{ textAlign: 'center ', fontSize: '21px', fontWeight: '400' }}>Loading...</p>;
+    }
+    if (user) {
+        navigate('/shop');
+    }
 
     // Write a function for create an user account 
     const handleCreateUsere = (event) => {
         if (passWord !== confirmPassWord) {
-            setEmail("your Password dose not match !");
+            setError("your Password dose not match !");
             return;
         }
+        createUserWithEmailAndPassword(email, passWord);
         event.preventDefault();
     }
     return (
