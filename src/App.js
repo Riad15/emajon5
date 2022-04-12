@@ -1,3 +1,4 @@
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './components/About/About';
@@ -8,6 +9,8 @@ import Orders from './components/Orders/Orders';
 import RequiarAuth from './components/RequiarAuth/RequiarAuth';
 import Shop from './components/shop/Shop';
 import SignUp from './components/SignUp/SignUp';
+import auth from './firebase.init';
+
 
 
 function App() {

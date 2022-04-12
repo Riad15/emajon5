@@ -48,11 +48,11 @@ const Login = () => {
                 <form onSubmit={handleUserLogin} action="">
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
-                        <input onBlur={handleEmail} type="email" name="email" id="" />
+                        <input onBlur={handleEmail} type="email" name="email" id="email" />
                     </div>
                     <div className="input-group">
                         <label htmlFor="password">Password</label>
-                        <input onBlur={handlePassWord} type="password" name="password" id="" />
+                        <input onBlur={handlePassWord} type="password" name="password" id="password" />
                     </div>
                     <p style={{ color: 'red', textAlign: 'center ', fontSize: '21px', fontWeight: '400' }}>{error?.message}</p>
                     <input className='submit-btn' type="submit" value="Log in" />
