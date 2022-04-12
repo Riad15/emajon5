@@ -6,9 +6,9 @@ import auth from '../../firebase.init';
 const SignUp = () => {
     // create set state 
     const [email, setEmail] = useState('');
-    const [passWord, setPassWord] = useState();
-    const [confirmPassWord, setConfirmPassWord] = useState();
-    const [error, setError] = useState();
+    const [passWord, setPassWord] = useState('');
+    const [confirmPassWord, setConfirmPassWord] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     // useCreateUserWithEmailAndPassword from react firebase hooks

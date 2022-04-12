@@ -1,20 +1,63 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import './Login.css'
+import auth from '../../firebase.init';
 
 const Login = () => {
+    // write a use State fir email and password
+    const [email, setEmail] = useState('')
+    const [passWord, setPassword] = useState('')
+    const navigate = useNavigate();
+    const [signInWithEmailAndPassword,
+        user, loading, error] = useSignInWithEmailAndPassword(auth);
+
+    // write a function for email handler
+    const handleEmail = (event) => {
+        setEmail(event.target.value);
+
+    }
+
+    // write a function for password handler
+    const handlePassWord = (event) => {
+        setPassword(event.target.value);
+
+    }
+    // error show
+    if (error) {
+        return (
+            <div>
+                <p style={{ color: 'red', textAlign: 'center ', fontSize: '21px', fontWeight: '400' }}>Error: {error.message}</p>
+            </div>
+        );
+    }
+    // loading timing condition
+    if (loading) {
+        return <p style={{ textAlign: 'center ', fontSize: '21px', fontWeight: '400' }}>Loading...</p>;
+    }
+
+    if (user) {
+        navigate('/shop');
+    }
+
+
+    const handleUserLogin = (event) => {
+        signInWithEmailAndPassword(email, passWord);
+        event.preventDefault();
+    }
+
     return (
         <div className='form-container'>
             <div className='login-div'>
                 <h4 className='form-title'>Log In</h4>
-                <form action="">
+                <form onSubmit={handleUserLogin} action="">
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
-                        <input type="email" name="email" id="" />
+                        <input onBlur={handleEmail} type="email" name="email" id="" />
                     </div>
                     <div className="input-group">
                         <label htmlFor="password">Password</label>
-                        <input type="password" name="password" id="" />
+                        <input onBlur={handlePassWord} type="password" name="password" id="" />
                     </div>
                     <input className='submit-btn' type="submit" value="Log in" />
                 </form>
