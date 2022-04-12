@@ -23,14 +23,7 @@ const Login = () => {
         setPassword(event.target.value);
 
     }
-    // error show
-    if (error) {
-        return (
-            <div>
-                <p style={{ color: 'red', textAlign: 'center ', fontSize: '21px', fontWeight: '400' }}>Error: {error.message}</p>
-            </div>
-        );
-    }
+
     // loading timing condition
     if (loading) {
         return <p style={{ textAlign: 'center ', fontSize: '21px', fontWeight: '400' }}>Loading...</p>;
@@ -59,6 +52,7 @@ const Login = () => {
                         <label htmlFor="password">Password</label>
                         <input onBlur={handlePassWord} type="password" name="password" id="" />
                     </div>
+                    <p style={{ color: 'red', textAlign: 'center ', fontSize: '21px', fontWeight: '400' }}>{error?.message}</p>
                     <input className='submit-btn' type="submit" value="Log in" />
                 </form>
                 <p className='form-p'>
