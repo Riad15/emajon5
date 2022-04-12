@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const SignUp = () => {
@@ -13,8 +13,6 @@ const SignUp = () => {
 
     // useCreateUserWithEmailAndPassword from react firebase hooks
     const [createUserWithEmailAndPassword, user, loading,] = useCreateUserWithEmailAndPassword(auth);
-    // useSignInWithGoogle from react firebase hooks
-    const [signInWithGoogle,] = useSignInWithGoogle(auth);
 
     // write a function to handle email 
     const handleEmailBlur = (event) => {
@@ -48,11 +46,7 @@ const SignUp = () => {
         createUserWithEmailAndPassword(email, passWord);
         event.preventDefault();
     }
-    const handleGoogleSignUp = (event) => {
-        // function call firebase google sign in hooks
-        signInWithGoogle();
-        event.preventDefault();
-    }
+
     return (
         <div className='form-container'>
             <div className='login-div'>
@@ -82,7 +76,7 @@ const SignUp = () => {
                     </div>
                     <p className='or'>or</p>
                 </div>
-                <div onClick={handleGoogleSignUp} className='google-login'>
+                <div className='google-login'>
                     <img className='g-logo' src={require('./picture/google-logo.png')} alt="" />
                     <p>Continue with google</p>
                 </div>

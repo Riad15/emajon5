@@ -13,6 +13,7 @@ const Menubar = () => {
                 <Link to="/inventory">Inventory</Link>
                 <Link to="/about">About</Link>
                 <Link to="/login">Log in</Link>
+
             </div>
         </nav>
 
